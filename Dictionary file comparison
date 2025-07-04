@@ -1,0 +1,55 @@
+Visual studio code:
+people = [
+    {"name": "Loise", "age": 28},
+    {"name": "James", "age": 24},
+    {"name": "Amina", "age": 30}
+]
+
+def sort_list_by_key_manual(data, key):
+    n = len(data)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if data[j][key] > data[j+1][key]:
+                data[j], data[j+1] = data[j+1], data[j]
+    return data
+people = [
+    {"name": "Loise", "age": 28},
+    {"name": "James", "age": 24},
+    {"name": "Amina", "age": 30}
+]
+
+sorted_people = sort_list_by_key_manual(people, "age")
+print(sorted_people)
+
+
+
+Co-pilot code: 
+people = [
+    {"name": "Loise", "age": 28},
+    {"name": "James", "age": 24},
+    {"name": "Amina", "age": 30}
+]
+
+def sort_list_by_key_manual(data, key):
+    n = len(data)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if data[j][key] > data[j+1][key]:
+                data[j], data[j+1] = data[j+1], data[j]
+    return data
+people = [
+    {"name": "Loise", "age": 28},
+    {"name": "James", "age": 24},
+    {"name": "Amina", "age": 30}
+]
+
+sorted_people = sort_list_by_key_manual(people, "age")
+print(sorted_people)
+
+
+Comparing the two:
+The two functions presented both aim to sort a list of dictionaries by a given key, in this case "age". The manual version uses a bubble sort algorithm, iterating through the list multiple times and swapping elements where necessary. This approach is valuable for learning how sorting algorithms work and gives the developer full control over the process. However, it is less efficient in practice, especially for larger datasets, because bubble sort has a time complexity of O(n²), meaning it gets significantly slower as the list grows.
+
+On the other hand, the AI-suggested version leverages Python’s built-in sorted() function with a lambda function as the key. This approach is not only concise but also significantly more efficient, with a time complexity of approximately O(n log n). It produces the same result but with cleaner code, better performance, and less chance of introducing logical bugs.
+
+Overall, while the manual function is helpful for understanding algorithmic logic, the AI-suggested solution is more practical for real-world use due to its simplicity, speed, and maintainability—making it the more efficient and scalable choice.
